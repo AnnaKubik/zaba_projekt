@@ -1,9 +1,14 @@
 #include "Zaba.h"
-#include "Samochod.h"
-#include "Drugi_samochod.h"
+#include "Pojazd.h"
+#include "Lewy.h"
+#include "Prawy.h"
 #include <QGraphicsScene>
 #include <QKeyEvent>
+#include <QGraphicsView>
 
+Zaba::Zaba (QGraphicsItem *parent): QGraphicsRectItem(parent)  {
+
+}
 void Zaba::keyPressEvent(QKeyEvent *event)  {
     if (event->key() == Qt::Key_Left || event->key() == 'A'){
         if (pos().x() > 0)
@@ -21,13 +26,14 @@ void Zaba::keyPressEvent(QKeyEvent *event)  {
         if(pos().y() + 50 < 400 )
         setPos(x(),y()+10);
     }
+
 }
 
 void Zaba::spawn() {
         //tworzenie samochodu
-    Samochod *samochod = new Samochod();
-    scene()->addItem(samochod);
-    Drugi_samochod *lewy = new Drugi_samochod();
+    Prawy *prawy = new Prawy();
+    scene()->addItem(prawy);
+    Lewy *lewy = new Lewy();
     scene()->addItem(lewy);
 
 }
