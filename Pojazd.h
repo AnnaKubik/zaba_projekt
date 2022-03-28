@@ -1,12 +1,14 @@
 #ifndef POJAZD_H
 #define POJAZD_H
-#include <QGraphicsRectItem>
+#include <QGraphicsPixmapItem>
 #include <QObject>
 #include <QTimer>
 #include <QGraphicsScene>
 #include <QList>
 #include <stdlib.h>
-class Pojazd : public QObject, public QGraphicsRectItem  {
+
+
+class Pojazd : public QObject, public QGraphicsPixmapItem  {
     Q_OBJECT
 public:
     Pojazd();
