@@ -4,7 +4,7 @@
 #include <QList>
 #include <stdlib.h>
 
-Pojazd::Pojazd() : QObject(), QGraphicsRectItem()  {
+Pojazd::Pojazd() : QObject(), QGraphicsPixmapItem()  {
     QTimer *timer = new QTimer(this);
     connect(timer,SIGNAL(timeout()), this, SLOT(move()));
 
