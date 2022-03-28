@@ -1,6 +1,6 @@
 #ifndef PRAWY_H
 #define PRAWY_H
-#include <QGraphicsRectItem>
+#include <QGraphicsPixmapItem>
 #include <QObject>
 #include "Pojazd.h"
 
