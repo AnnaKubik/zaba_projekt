@@ -1,6 +1,6 @@
 #ifndef LEWY_H
 #define LEWY_H
-#include <QGraphicsRectItem>
+#include <QGraphicsPixmapItem>
 #include <QObject>
 #include "Pojazd.h"
 
