@@ -6,13 +6,14 @@
 #include "Zaba.h"
 #include "Akcja.h"
 #include "Szansa.h"
+#include <QImage>
 //objekt globalny
 extern Akcja * akcja;
 Prawy::Prawy()  {
     // set random position
-    setPos(600,250);
+    setPos(500,260);
     //rysowanie samochodu
-    setRect(0,0,70,50);
+     setPixmap(QPixmap(":/dodatki/samochod_prawy.png"));
 }
 //w prawo
 void Prawy::move()  {
@@ -28,7 +29,7 @@ void Prawy::move()  {
             // usun ze scey(pozostaje na stercie
             scene()->removeItem(Zaba_po_zderzeniu[i]);
 
-        Zaba_po_zderzeniu[i]->setPos(300,350);
+        Zaba_po_zderzeniu[i]->setPos(300,300);
 
             scene()->addItem(Zaba_po_zderzeniu[i]);
 
@@ -44,7 +45,7 @@ void Prawy::move()  {
 
     int random_number = rand() % 5;
   setPos(x()-random_number,y());
-  if (pos().x() + rect().width() < 0)  {
+  if (pos().x() + pixmap().width() < 0)  {
       scene()->removeItem(this);
       delete this;
   }
