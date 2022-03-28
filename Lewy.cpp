@@ -9,9 +9,9 @@
 extern Akcja * akcja;
 Lewy::Lewy()  {
     //miejsce startu
-    setPos(0,100);
+    setPos(0,140);
     //rysowanie samochodu
-    setRect(0,0,70,50);
+    setPixmap(QPixmap(":/dodatki/samochod_lewy.png"));
     //polaczenie
 //    QTimer *t_l = new QTimer(this);
 //    connect(t_l,SIGNAL(timeout()), this, SLOT(move()));
@@ -31,7 +31,7 @@ void Lewy::move()  {
             // usun ze scey(pozostaje na stercie
             scene()->removeItem(Zaba_po_zderzeniu[i]);
 
-        Zaba_po_zderzeniu[i]->setPos(300,350);
+        Zaba_po_zderzeniu[i]->setPos(300,300);
 
             scene()->addItem(Zaba_po_zderzeniu[i]);
 
@@ -43,10 +43,9 @@ void Lewy::move()  {
         }
     }
 
-
     int random_number = rand() % 6;
   setPos(x()+random_number,y());
-  if (pos().x() + rect().width() > 650)  {
+  if (pos().x() + pixmap().width() > 650)  {
       scene()->removeItem(this);
       delete this;
   }
