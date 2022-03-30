@@ -10,7 +10,7 @@ private :
 public:
     Szansa(QGraphicsItem *parent = 0);
     void zmniejsz();
-    int podaj_zycie();
+    //int podaj_zycie();
     void gameOver();
 };
 
