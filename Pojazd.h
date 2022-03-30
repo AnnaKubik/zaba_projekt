@@ -1,19 +1,16 @@
-#ifndef POJAZD_H
-#define POJAZD_H
+#ifndef PRAWY_H
+#define PRAWY_H
 #include <QGraphicsPixmapItem>
 #include <QObject>
-#include <QTimer>
-#include <QGraphicsScene>
-#include <QList>
-#include <stdlib.h>
+#include "Pojazd.h"
 
 
-class Pojazd : public QObject, public QGraphicsPixmapItem  {
+class Prawy : public Pojazd  {
     Q_OBJECT
 public:
-    Pojazd();
+    Prawy();
 public slots:
-    virtual void move() = 0;
+    virtual void ruch();
 };
 
-#endif // POJAZD_H
+#endif // PRAWY_H
