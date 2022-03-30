@@ -15,11 +15,9 @@ Szansa::Szansa(QGraphicsItem *parent): QGraphicsTextItem(parent)  {
 }
 void Szansa::gameOver()  {
     //policz ile zyci i daj wynik
-    int pozostale_szanse = 0;
-    int obecne_szanse = 0;
-    if (ilosc_szans > 0) {
+    /*if (ilosc_szans > 0) {
 
-    } else if (ilosc_szans == 0)  {
+    } else*/ if (ilosc_szans == 0)  {
         setPlainText(QString("Koniec gry") );
        setDefaultTextColor(Qt::red);
        setFont(QFont("",80));
@@ -29,6 +27,8 @@ void Szansa::gameOver()  {
     }
 
 }
+
+// funkcja odbierajaca ilosc szans po kazdym uderzeniu w samochod
 void Szansa::zmniejsz()  {
     ilosc_szans--;
     //wyswietlanie zycia po zmianie (po uderzeniu w samochod)
@@ -42,8 +42,8 @@ void Szansa::zmniejsz()  {
       gameOver();
      }
 }
-int Szansa::podaj_zycie()  {
-    return ilosc_szans;
-}
+//int Szansa::podaj_zycie()  {
+//    return ilosc_szans;
+//}
 
 
