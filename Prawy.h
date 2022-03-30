@@ -10,7 +10,7 @@ class Prawy : public Pojazd  {
 public:
     Prawy();
 public slots:
-    virtual void move();
+    virtual void ruch();
 };
 
 #endif // PRAWY_H
