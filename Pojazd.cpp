@@ -21,17 +21,30 @@ void Pojazd::po_uderzeniu() {
         if (typeid(*(Zaba_po_zderzeniu[i])) == typeid(Zaba))  {
             //zmniejsz zycie
             akcja->szansa->zmniejsz();
-            // usun ze scey(pozostaje na stercie
+            // usun ze sceny(pozostaje na stercie
             scene()->removeItem(Zaba_po_zderzeniu[i]);
 
-            Zaba_po_zderzeniu[i]->setPos(300,300);
-            //ponowne dodanie zaby na start
-            scene()->addItem(Zaba_po_zderzeniu[i]);
+
+            if (akcja->szansa->ilosc_szans <= 0) {
+                scene()->removeItem(Zaba_po_zderzeniu[i]);
+             //   scene()->removeItem(this);
+
+
+                 delete Zaba_po_zderzeniu[i];
+                //delete this;
+            }  else {
+                //ust nowej pozycji zaby
+                Zaba_po_zderzeniu[i]->setPos(300,300);
+                //ponowne dodanie zaby na start
+                scene()->addItem(Zaba_po_zderzeniu[i]);
+
+
 
             Zaba_po_zderzeniu[i]->setFlag(QGraphicsItem::ItemIsFocusable);
             Zaba_po_zderzeniu[i]->setFocus();
-
+}
             return;
+
         }
     }
 }
