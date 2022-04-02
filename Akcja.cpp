@@ -4,9 +4,20 @@
 #include <QGraphicsView>
 #include <QTimer>
 #include "Akcja.h"
+#include "Pojazd.h"
 #include <QImage>
+#include "Prawy.h"
+#include "Lewy.h"
+#include <QObject>
+#include <stdlib.h>
 
-
+void Zaba::spawn(){
+     //tworzenie i dodawanie samochodow na scene
+     Prawy *prawy = new Prawy();
+     scene()->addItem(prawy);
+     Lewy *lewy = new Lewy();
+     scene()->addItem(lewy);
+}
 Akcja::Akcja(QWidget *parent)  {
     // tworzenie sceny
      QGraphicsScene * scene = new QGraphicsScene();
@@ -14,40 +25,28 @@ Akcja::Akcja(QWidget *parent)  {
      scene->setSceneRect(0,0,600,400);
      //dodawanie tla
      setBackgroundBrush(QBrush(QImage(":/dodatki/tlo.png")));
-
+     // tworzenie sceny
      setScene(scene);
-    //tworzenie przedmiotu w scenie - poznieij bedzie to zaba
-    Zaba * uzytkownik = new Zaba();
-    //ustawianie wielkosci kwadratu - pozniej zaby
-    // pierwsze dwa -lolalizacja lewego gornego rogu x,y, kolejne dwa szerokosc i wysokosc
-    uzytkownik->setPixmap(QPixmap(":/dodatki/zaba.png"));;
+
+     //dod widoku zbey zobaczyc nasza scene
+     QGraphicsView * view = new QGraphicsView(scene);
+    //ustawiam wielkosc widoku
+     view->setFixedSize(600,400);
+    //tworzenie i dodanie zaby do sceny
+    show();
+     Zaba * uzytkownik = new Zaba();
     //dodawanie przedmiotu do sceny
     scene->addItem(uzytkownik);
-    //dod widoku zbey zobaczyc nasza scene
-    QGraphicsView * view = new QGraphicsView(scene);
 
-    uzytkownik->setPos(300,300);
-    // skupienie na obiekcie- zaba
-    uzytkownik->setFlag(QGraphicsItem::ItemIsFocusable);
-    uzytkownik->setFocus();
-
-    //ustawiam wielkosc widoku
-    view->setFixedSize(600,400);
-
-
-    // dodawania zycia do sceny
+    // dodawanie zycia do sceny
     szansa = new Szansa();
     scene->addItem(szansa);
 
-    // widget wizualizujacy scene (oraz jej zawartość)
-//   view->show();
-
-
-
     QTimer * timer = new QTimer();
     QObject::connect(timer,SIGNAL(timeout()),uzytkownik,SLOT(spawn()));
-    timer->start(3000 );
+    timer->start(2000);
 
 
-    show();
 }
+
+
