@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/dodatki">
+        <file>samochod_lewy.png</file>
+        <file>samochod_prawy.png</file>
+        <file>zaba.png</file>
+        <file>tlo.png</file>
+        <file>wygrana_zaba.png</file>
+        <file>zielona_plama.png</file>
+    </qresource>
+</RCC>
