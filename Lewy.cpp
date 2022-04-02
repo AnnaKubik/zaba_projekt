@@ -1,47 +1,19 @@
-#include "Lewy.h"
 #include <QTimer>
 #include <QGraphicsScene>
 #include <QList>
 #include <stdlib.h>
-#include "Szansa.h"
-#include "Zaba.h"
-#include "Akcja.h"
-//extern Akcja * akcja;
+#include "Lewy.h"
+
 Lewy::Lewy()  {
     //miejsce startu
     setPos(0,140);
     //rysowanie samochodu
     setPixmap(QPixmap(":/dodatki/samochod_lewy.png"));
-    //polaczenie
-//    QTimer *t_l = new QTimer(this);
-//    connect(t_l,SIGNAL(timeout()), this, SLOT(move()));
-
-//    t_l->start(50);
 }
 //w lewo
 void Lewy::ruch()  {
-//     QList<QGraphicsItem *> Zaba_po_zderzeniu = collidingItems();
-
-//     // jezeli samochod zderzy sie z zaba zniszcz oba
-//     for (int i = 0, n = Zaba_po_zderzeniu.size(); i < n; ++i)  {
-//         if (typeid(*(Zaba_po_zderzeniu[i])) == typeid(Zaba))  {
-//             //zmniejsz zycie
-//             akcja->szansa->zmniejsz();
-//             // usun ze scey(pozostaje na stercie
-//             scene()->removeItem(Zaba_po_zderzeniu[i]);
-
-//             Zaba_po_zderzeniu[i]->setPos(300,300);
-//             //ponowne dodanie zaby na start
-//             scene()->addItem(Zaba_po_zderzeniu[i]);
-
-//             Zaba_po_zderzeniu[i]->setFlag(QGraphicsItem::ItemIsFocusable);
-//             Zaba_po_zderzeniu[i]->setFocus();
-
-//             return;
-//        }
-//    }
     // ruch w lewo
-     int random_number = rand() % 8;
+     int random_number = rand() % 10;
      setPos(x()+random_number,y());
      if (pos().x() + pixmap().width() > 650)  {
          scene()->removeItem(this);
@@ -49,4 +21,5 @@ void Lewy::ruch()  {
      }
      Lewy::po_uderzeniu();
 }
+
 
