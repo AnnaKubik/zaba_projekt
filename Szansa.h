@@ -3,14 +3,13 @@
 #include <QGraphicsTextItem>
 #include "Zaba.h"
 
-
-class Szansa: public QGraphicsTextItem{
-private :
+class Szansa: public QGraphicsTextItem  {
+public :
     int ilosc_szans;
 public:
     Szansa(QGraphicsItem *parent = 0);
     void zmniejsz();
-    //int podaj_zycie();
+    void zwieksz();
     void gameOver();
 };
 
