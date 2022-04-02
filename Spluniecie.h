@@ -3,6 +3,7 @@
 #include <QGraphicsPixmapItem>
 #include <QObject>
 #include <QGraphicsItem>
+//klasa odpowiedzialna za metode "plucie" wraz jej nastepstwami
 class Spluniecie : public QObject, public QGraphicsPixmapItem  {
     Q_OBJECT
 public:
