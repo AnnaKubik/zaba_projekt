@@ -6,12 +6,17 @@
 #include <QGraphicsScene>
 #include "Zaba.h"
 #include "Szansa.h"
+#include <QGraphicsItem>
+#include <QObject>
+#include "Pojazd.h"
+#include "Prawy.h"
+#include "Lewy.h"
 
-class Akcja : public QGraphicsView  {
+class Akcja : public QGraphicsView {
+    Q_OBJECT
 
 public:
     Akcja(QWidget *parent = 0);
-
     QGraphicsScene *scene;
     Zaba *uzytkownik;
     Szansa *szansa;
