@@ -1,16 +1,16 @@
-#ifndef PRAWY_H
-#define PRAWY_H
+#ifndef POJAZD_H
+#define POJAZD_H
 #include <QGraphicsPixmapItem>
 #include <QObject>
-#include "Pojazd.h"
+#include "Zaba.h"
 
-
-class Prawy : public Pojazd  {
+class Pojazd : public QObject, public QGraphicsPixmapItem  {
     Q_OBJECT
 public:
-    Prawy();
+    Pojazd();
+     void po_uderzeniu();
 public slots:
-    virtual void ruch();
+    virtual void ruch() = 0;
 };
 
-#endif // PRAWY_H
+#endif // POJAZD_H
