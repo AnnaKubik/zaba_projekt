@@ -1,10 +1,8 @@
-#include "Zaba.h"
-#include "Akcja.h"
-#include "Lewy.h"
-#include "Prawy.h"
 #include <QGraphicsScene>
 #include <QKeyEvent>
 #include <QGraphicsView>
+#include "Zaba.h"
+#include "Spluniecie.h"
 
 Zaba::Zaba(QGraphicsItem *parent): QGraphicsPixmapItem(parent)  {
     //pozycja startowa zaby
@@ -36,6 +34,11 @@ void Zaba::keyPressEvent(QKeyEvent *event)  {
         if(pos().y() > 100 && pos().y() + 99 < 400 )
         setPos(x(),y()+15);
     }
+    else if (event->key() == Qt::Key_Space )  {
+        Spluniecie *spluniecie = new Spluniecie;
+        spluniecie->setPos(x(),y());
+                scene()->addItem(spluniecie);
+    }
 
 }
 
@@ -43,7 +46,3 @@ void Zaba::wygrana() {
     if(pos().y() < 5)
         setPixmap(QPixmap(":/dodatki/wygrana_zaba.png"));
 }
-
-
-
-
