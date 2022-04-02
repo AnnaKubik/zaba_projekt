@@ -11,7 +11,7 @@
 #include "Pojazd.h"
 #include "Prawy.h"
 #include "Lewy.h"
-
+// Klasa sterujaca "serce" programu
 class Akcja : public QGraphicsView {
     Q_OBJECT
 
