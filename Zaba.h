@@ -5,6 +5,8 @@
 #include <QObject>
 #include <QGraphicsScene>
 
+//klasa w ktorej zawarta jest mozliwosc ruchu dla zaby, mozliwosc "wskrzeszania" samochodow oraz zmiana zaby po wygranej
+
 
 class Zaba: public QObject, public QGraphicsPixmapItem {
     Q_OBJECT
