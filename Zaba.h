@@ -11,11 +11,12 @@ class Zaba: public QObject, public QGraphicsPixmapItem {
 public:
     Zaba(QGraphicsItem * parent=0);
     //metoda ktora zmusza oblekt do ruchy - deklaracja
-    void keyPressEvent(QKeyEvent * event);
+    void keyPressEvent(QKeyEvent *event);
 public slots:
     void spawn();
 public:
     void wygrana();
+
 
 };
 
