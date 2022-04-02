@@ -3,7 +3,7 @@
 #include <QGraphicsPixmapItem>
 #include <QObject>
 #include "Zaba.h"
-
+//klasa odpowiadajaca za ruch samochodu z prawej strony
 class Pojazd : public QObject, public QGraphicsPixmapItem  {
     Q_OBJECT
 public:
